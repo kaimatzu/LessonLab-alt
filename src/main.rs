@@ -1,9 +1,13 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+
 // import the prelude to get access to the `rsx!` macro and the `Scope` and `Element` types
 use dioxus::{prelude::*, html::hr};
+use dioxus_router::prelude::*;
 
+use LessonLab::Components::Header::Header;
+use LessonLab::Components::Button::Button;
 
 fn main() {
     // launch the app   
@@ -13,24 +17,24 @@ fn main() {
 
 // create a component that renders a div with the text "Hello, world!"
 fn App(cx: Scope) -> Element {
-    let hello = hello();
-    
-    let login = login();
-    
-    let mut count = use_state(cx, || 0);
-    let counter = counter(count);
-    
+	let hello = hello();
+
+	let login = login();
+
+	let mut count = use_state(cx, || 0);
+	let counter = counter(count);
+
 
     cx.render(rsx! { 
-        hello 
-        login 
-        counter 
+		hello
+		login
+		counter
     })
 }
 
 fn hello<'a>() -> LazyNodes<'a, 'a> {
     let ret = rsx! {
-        div { "hello world asdasd" }
+        div { "hello world" }
     };
     ret
 }
