@@ -1,13 +1,17 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+// use std::io::ErrorKind::NotFound;
 
 // import the prelude to get access to the `rsx!` macro and the `Scope` and `Element` types
 use dioxus::{prelude::*, html::hr};
 use dioxus_router::prelude::*;
+// use crate::IntoRoutable::Route;
 
 use LessonLab::Components::Header::Header;
 use LessonLab::Components::Button::Button;
+use LessonLab::Pages::Upload::Upload;
+use LessonLab::Pages::Menu::Menu;
 
 fn main() {
     // launch the app   
@@ -15,21 +19,37 @@ fn main() {
     dioxus_web::launch(App);
 }
 
+// ANCHOR: router
+#[derive(Routable, Clone, Debug, PartialEq)]
+#[rustfmt::skip]
+enum Route {
+	#[route("/")]
+	Menu {},
+	#[route("/upload")]
+	Upload {}
+}
+// ANCHOR_END: router
+
 // create a component that renders a div with the text "Hello, world!"
 fn App(cx: Scope) -> Element {
-	let hello = hello();
+	// let hello = hello();
 
-	let login = login();
+	// let login = login();
 
-	let mut count = use_state(cx, || 0);
-	let counter = counter(count);
+	// let mut count = use_state(cx, || 0);
+	// let counter = counter(count);
 
 
-    cx.render(rsx! { 
-		hello
-		login
-		counter
-    })
+    // cx.render(rsx! { 
+	// 	hello
+	// 	login
+	// 	counter
+    // })
+
+	render! {
+		Router::<Route> {}
+	}
+
 }
 
 fn hello<'a>() -> LazyNodes<'a, 'a> {
