@@ -6,8 +6,7 @@ use dioxus::{prelude::*, html::hr};
 
 
 fn main() {
-    // launch the web app   
-
+    // launch the app   
     wasm_logger::init(wasm_logger::Config::default());
     dioxus_web::launch(App);
 }
