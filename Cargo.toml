@@ -9,9 +9,9 @@ version = "0.1.0"
 dioxus = "0.4.0"
 log = "0.4.20"
 wasm-logger = "0.2.0"
+dioxus-router = "0.4.1"
 
 # For web/development builds. Supports hot-reloading
-dioxus-router = "0.4.1"
 dioxus-web = "0.4.0"
 
 # For desktop/production builds. Does not support hot-reloading
