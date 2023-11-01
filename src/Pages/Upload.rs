@@ -1,11 +1,15 @@
 #![allow(non_snake_case)]
 
 use dioxus::prelude::*;
+use dioxus_router::prelude::*;
 
 pub fn Upload(cx: Scope) -> Element {
-	render! {
+	cx.render(rsx! {
 		h1 { "Upload" }
-	}
+		Link {
+			to: "/", "Main Menu"
+		}
+	})
 }
 
 pub struct UploadView {
