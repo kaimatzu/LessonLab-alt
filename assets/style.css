@@ -1,0 +1,65 @@
+* {
+	font-family: Roboto, Inter, Arial;
+}
+
+body {
+	padding: 24px 24px; /* y x */
+	margin-left: auto;
+	margin-right: auto;
+	color: #313338;
+}
+
+main {
+	padding-top: 50px;
+	/* display: flex; */
+}
+
+.title {
+	font-weight: bold;
+	font-size: 76px;
+	/* transform: translateY(-12px); */
+	vertical-align: top;
+	border-color: red;
+}
+
+.logo {
+	display: inline-block;
+}
+
+.title {
+	display: inline-block;
+}
+
+.mat-item {
+	display: inline-block;
+	margin-bottom: 64px;
+	margin-right: 21px;
+	border-radius: 14px;
+	box-shadow: 1px 10px 30px rgba(31, 31, 31, 0.75); /* x y blur color */
+	background-color: #313338;
+	background: linear-gradient(
+		0deg,
+		rgba(96, 98, 103, 1) 0%,
+		rgba(49, 51, 56, 1) 100%
+	);
+}
+
+.dashboard {
+	padding: auto auto;
+}
+
+.primary-button {
+	background-color: #f1c41b;
+	padding: 10px 20px;
+	border-radius: 4px;
+	box-shadow: 2.8px 2.8px 2.2px rgba(224, 220, 7, 0.019),
+		6.7px 6.7px 5.3px rgba(251, 255, 0, 0.027),
+		12.5px 12.5px 10px rgba(255, 247, 0, 0.033),
+		22.3px 22.3px 17.9px rgba(255, 247, 0, 0.04),
+		41.8px 41.8px 33.4px rgba(255, 251, 0, 0.048),
+		100px 100px 80px rgba(255, 251, 0, 0.07);
+}
+
+.hflex {
+	display: flexbox;
+}

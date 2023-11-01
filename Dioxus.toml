@@ -1,0 +1,16 @@
+[application]
+default_platform = "web"
+name = "LessonLab"
+
+[web.app]
+title = "LessonLab"
+
+[web.watcher]
+reload_html = true
+watch_path = ["src", "public", "assets"]
+
+[web.resource]
+style = ["./assets/style.css"]
+
+[web.resource.dev]
+style = ["./assets/style.css"]
