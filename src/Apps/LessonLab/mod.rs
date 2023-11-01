@@ -1,5 +1,5 @@
-pub mod App;
-pub mod Routing;
+pub mod app;
+pub mod routing;
 
 pub mod Entry;
 pub mod Lesson;

@@ -2,10 +2,10 @@
 use dioxus::{prelude::{*, SvgAttributes}, html::hr, html::link};
 use dioxus_router::prelude::*;
 use crate::Apps::LessonLab::Entry::View::{Menu, Upload};
-use crate::Apps::LessonLab::Routing;
+use crate::Apps::LessonLab::routing;
 
 pub fn App(cx: Scope) -> Element {
-    render! { 
-        Router::<Routing::Route> {}
+    render! {
+        Router::<routing::Route> {}
     }
 }
