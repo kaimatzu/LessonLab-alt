@@ -7,7 +7,7 @@ use crate::Apps::LessonLab::Routing::Route;
 #[inline_props]
 pub fn Menu(cx: Scope) -> Element {
 	render! {
-		h1 { "Menu" }
+		h1 { "Menus" }
 		Link {
 			to: Route::Upload {}, "link"
 		}
