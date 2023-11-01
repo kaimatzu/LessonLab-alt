@@ -1,5 +1,5 @@
-pub mod menu;
-pub mod upload;
+pub mod Menu;
+pub mod Upload;
 
 // mod Menu;
 // mod Upload;
