@@ -1,2 +1,3 @@
-2023/11/01-13:29:46.458 8490 Creating DB C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Local Storage\leveldb since it was missing.
-2023/11/01-13:29:46.485 8490 Reusing MANIFEST C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2023/11/01-18:57:07.790 7550 Reusing MANIFEST C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2023/11/01-18:57:07.793 7550 Recovering log #3
+2023/11/01-18:57:07.802 7550 Reusing old log C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000003.log 
