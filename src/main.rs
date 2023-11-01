@@ -3,6 +3,8 @@
 
 use self::Apps::LessonLab::app;
 mod Apps;
+
+use dioxus::{prelude::*, html::hr};
 // use std::io::ErrorKind::NotFound;
 
 // import the prelude to get access to the `rsx!` macro and the `Scope` and `Element` types
@@ -18,4 +20,5 @@ fn main() {
     // launch the app   
     wasm_logger::init(wasm_logger::Config::default());
     dioxus_web::launch(app::App);
+    // dioxus_web::launch(T);
 }
