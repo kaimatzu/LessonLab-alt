@@ -1,2 +1,3 @@
-2023/11/01-13:29:46.836 8490 Creating DB C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Session Storage since it was missing.
-2023/11/01-13:29:46.863 8490 Reusing MANIFEST C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Session Storage/MANIFEST-000001
+2023/11/01-18:57:08.114 7550 Reusing MANIFEST C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Session Storage/MANIFEST-000001
+2023/11/01-18:57:08.116 7550 Recovering log #3
+2023/11/01-18:57:08.122 7550 Reusing old log C:\Users\karlj\source\Projects\LessonLab\dist\LessonLab.exe.WebView2\EBWebView\Default\Session Storage/000003.log 
