@@ -13,14 +13,14 @@ pub fn Menu(cx: Scope) -> Element {
 			h2 { "style": "display: flexbox;",
 				"Dashboard" 
 			}
-			// Link {
-			// 	to: Route::Upload {},
-			// 	button { class: "primary-button", "+ New Material"}
-			// }
-			button { class: "primary-button",
-				onclick: move |_| {/* Write some process here */},
-				"+ New Material"
+			Link {
+				to: Route::Upload {},
+				button { class: "primary-button", "+ New Material"}
 			}
+			// button { class: "primary-button",
+			// 	onclick: move |_| {/* Write some process here */},
+			// 	"+ New Material"
+			// }
 		}
 
 		for i in 0..num {
