@@ -1,5 +1,8 @@
-body {
+* {
 	font-family: Roboto, Inter, Arial;
+}
+
+body {
 	padding: 24px 24px; /* y x */
 	margin-left: auto;
 	margin-right: auto;
