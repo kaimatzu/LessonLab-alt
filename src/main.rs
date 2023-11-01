@@ -46,9 +46,9 @@ fn App(cx: Scope) -> Element {
 	// 	counter
     // })
 
-	render! {
+	cx.render(rsx!{
 		Router::<Route> {}
-	}
+	})
 
 }
 
