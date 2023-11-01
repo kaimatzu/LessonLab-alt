@@ -21,4 +21,5 @@ fn main() {
     // launch the app   
     wasm_logger::init(wasm_logger::Config::default());
     dioxus_web::launch(app::App);
+    // dioxus_web::launch(T);
 }
