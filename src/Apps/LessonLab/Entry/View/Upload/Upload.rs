@@ -2,13 +2,15 @@
 
 use dioxus::{prelude::*, html::hr, html::link};
 use dioxus_router::prelude::*;
+
+use crate::Apps::LessonLab::Entry::View::Upload::FileContainer::FileContainer;
 use crate::Apps::LessonLab::routing::Route;
+use crate::ComponentTemplates::Header::Header::Header;
+use crate::Apps::LessonLab::Entry::View::Upload::Body::Body;
 
 pub fn Upload(cx: Scope) -> Element {
-	render! {
-		h1 { "Upload" }
-		Link {
-			to: Route::Menu{}, "Cancel"
-		}
+	render! { style { include_str!("../../../../../../assets/style.css") }
+		Header { title: "LessonLab".to_string() }
+		Body {}
 	}
 }

@@ -1,5 +1,7 @@
 #![allow(non_snake_case)]
 
+use std::future;
+
 use dioxus::{prelude::*, html::hr, html::link};
 use dioxus_router::prelude::*;
 use crate::Apps::LessonLab::routing::Route;
@@ -8,7 +10,11 @@ use crate::ComponentTemplates::Header::Header::Header;
 
 pub fn Menu(cx: Scope) -> Element {
 	let mut num = use_state(cx, || 5);
+<<<<<<< HEAD
 	// let nav = use_navigator(cx);
+=======
+	let nav = use_navigator(cx);
+>>>>>>> CU-86ctu77m2_Implement-UI-Upload-File_Hans-Duran
 	cx.render(rsx!{ style { include_str!("../../../../../../assets/style.css") },
 		Header { title: "LessonLab".to_string() }
 		main { id: "menu-main",
@@ -18,12 +24,12 @@ pub fn Menu(cx: Scope) -> Element {
 				}
 				Link {
 					to: Route::Upload {},
-					button { class: "primary-button", id: "new-material-button", "+ New Material"}
+					button { class: "primary-button", id: "new-material-button", "+ New Material" }
 				}
 
 				// button { class: "primary-button", id: "new-material-button",
 				// 	width: "198.25px", height: "52px",
-				// 	onclick: move |_| { nav.push(Route::Upload {  }) },
+				// 	onclick: move |_| nav.push(Route::Upload {}),
 				// 	"+ New Material"
 				// }
 			}
