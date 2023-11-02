@@ -5,14 +5,14 @@ import re
 from dotenv import load_dotenv
 import os
 
-with pdfplumber.open('Proxy Design Pattern Summary.pdf') as pdf:
+with pdfplumber.open('Design patterns Midterm Notes.pdf') as pdf:
     # iterate over each page
     for page in pdf.pages:
         # extract text
         text = page.extract_text()
         # print(text)
 
-fileName = "Proxy Design Pattern Summary.pdf"
+fileName = "Design patterns Midterm Notes.pdf"
 
 output = aw.Document()
 output.remove_all_children()
