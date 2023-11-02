@@ -3,6 +3,7 @@
 
 use self::Apps::LessonLab::app;
 mod Apps;
+mod ComponentTemplates;
 
 fn main() {
     // launch the app   
