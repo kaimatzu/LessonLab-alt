@@ -10,11 +10,7 @@ use crate::ComponentTemplates::Header::Header::Header;
 
 pub fn Menu(cx: Scope) -> Element {
 	let mut num = use_state(cx, || 5);
-<<<<<<< HEAD
 	// let nav = use_navigator(cx);
-=======
-	let nav = use_navigator(cx);
->>>>>>> CU-86ctu77m2_Implement-UI-Upload-File_Hans-Duran
 	cx.render(rsx!{ style { include_str!("../../../../../../assets/style.css") },
 		Header { title: "LessonLab".to_string() }
 		main { id: "menu-main",
