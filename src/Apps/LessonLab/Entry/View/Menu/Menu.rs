@@ -1,7 +1,5 @@
 #![allow(non_snake_case)]
 
-use std::future;
-
 use dioxus::{prelude::*, html::hr, html::link};
 use dioxus_router::prelude::*;
 use crate::Apps::LessonLab::routing::Route;
