@@ -1,1 +1,1 @@
-pub mod menu_controller;
+pub mod MenuController;

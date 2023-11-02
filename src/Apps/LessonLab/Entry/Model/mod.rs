@@ -1,1 +1,1 @@
-pub mod menu_model;
+pub mod MenuModel;
