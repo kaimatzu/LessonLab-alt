@@ -1,0 +1,13 @@
+.bar {
+	font-family: Roboto, Inter, Arial;
+	display: grid;
+	align-items: center;
+	border: none;
+	padding: 10px;
+	background-color: #313338;
+	box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75);
+	border-radius: 14px;
+	color: white;
+	padding-left: 20px;
+	margin-bottom: 8px;
+}

@@ -5,7 +5,7 @@ use crate::Apps::LessonLab::Entry::View::{Menu, Upload};
 use crate::Apps::LessonLab::routing;
 
 pub fn App(cx: Scope) -> Element {
-    render! {
+    render! { 
         Router::<routing::Route> {}
     }
 }

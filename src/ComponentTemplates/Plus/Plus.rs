@@ -2,8 +2,8 @@
 
 use dioxus::prelude::*;
 
-pub fn Plus(cx: Scope/*, onClick: () */) -> Element {
-	cx.render(rsx! { style { include_str!("../../../../../../assets/style.css") }
+pub fn Plus(cx: Scope) -> Element {
+	cx.render(rsx! {
 		div { class: "plus",
 			"+"
 		}

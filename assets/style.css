@@ -2,7 +2,7 @@
 	font-family: Roboto, Inter, Arial;
 }
 
-body {
+/* body {
 	margin-left: auto;
 	margin-right: auto;
 	color: #313338;
@@ -10,42 +10,42 @@ body {
 
 main {
 	padding-top: 50px;
-}
+} */
 
-.title {
+/* .title {
 	font-weight: bold;
 	font-size: 64px;
 	vertical-align: top;
 	display: inline-block;
 	border: none;
 	margin-bottom: 0px;
-}
+} */
 
-.logo {
+/* .logo {
 	display: inline-block;
-}
+} */
 
-.dashboard {
+/* .dashboard {
 	padding: auto auto;
-}
+} */
 
-.primary-button {
+/* .primary-button {
 	background-color: #f1c41b;
 	padding: 10px 20px;
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0 4px 30px rgba(247, 196, 27, 0.35);
-}
+} */
 
-.secondary-button {
+/* .secondary-button {
 	background-color: #ffe894;
 	padding: 10px 20px;
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0 4px 30px rgba(247, 196, 27, 0.35);
-}
+} */
 
-.card {
+/* .card {
 	display: flexbox;
 	margin-bottom: 64px;
 	background-color: #313338;
@@ -55,9 +55,9 @@ main {
 	padding: 10px;
 	box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75);
 	color: white;
-}
+} */
 
-.bar {
+/* .bar {
 	display: grid;
 	align-items: center;
 	border: none;
@@ -68,9 +68,9 @@ main {
 	color: white;
 	padding-left: 20px;
 	margin-bottom: 8px;
-}
+} */
 
-.plus {
+/* .plus {
 	margin-left: 50px;
 	width: 10px;
 	height: 10px;
@@ -80,13 +80,13 @@ main {
 	box-shadow: 0 4px 30px rgba(247, 196, 27, 0.35);
 	padding: 20px 20px;
 	line-height: 10px;
-}
+} */
 
-#new-material-button {
+/* #new-material-button {
 	display: inline-block;
-}
+} */
 
-#dashboard-text {
+/* #dashboard-text {
 	display: inline-block;
 	right: 0;
 }
@@ -95,21 +95,21 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
+} */
 
-#menu-header {
+/* #menu-header {
 	padding: 0px 212px;
-}
+} */
 
-#menu-main {
-	padding: 50px 300px; /* y x */
+/* #menu-main {
+	padding: 50px 300px;
 	padding-top: 0px;
 	padding-bottom: 0px;
-}
+} */
 
-#right-buttons {
+/* #right-buttons {
 	width: 198.5px;
 	height: 52px;
 	margin-left: 0px;
 	align-items: right;
-}
+} */

@@ -3,22 +3,32 @@
 use dioxus::{prelude::*, html::hr, html::link};
 use dioxus_router::prelude::*;
 use crate::Apps::LessonLab::routing::Route;
-use crate::Apps::LessonLab::Entry::View::Menu::Card::Card;
+use crate::ComponentTemplates::Card::Card::Card;
 use crate::ComponentTemplates::Header::Header::Header;
 
 pub fn Menu(cx: Scope) -> Element {
 	let mut num = use_state(cx, || 5);
 	// let nav = use_navigator(cx);
-	cx.render(rsx!{ style { include_str!("../../../../../../assets/style.css") },
+	cx.render(rsx!{
+		style {
+			include_str!("styles/header-style.css")
+			include_str!("styles/card-style.css")
+			include_str!("styles/button-style.css")
+			include_str!("styles/dashboard-text-style.css")
+			include_str!("styles/body-style.css")
+			include_str!("styles/main-style.css")
+			include_str!("styles/logo-style.css")
+			include_str!("styles/title-style.css")
+		},
 		Header { title: "LessonLab".to_string() }
-		main { id: "menu-main",
-			div { id: "dashboard-text-container",
-				h2 { id: "dashboard-text",
+		main {
+			div { class: "dashboard-text-container",
+				h2 { class: "dashboard-text",
 					"Dashboard" 
 				}
 				Link {
 					to: Route::Upload {},
-					button { class: "primary-button", id: "new-material-button", "+ New Material" }
+					button { class: "primary-button", id: "", "+ New Material" }
 				}
 
 				// button { class: "primary-button", id: "new-material-button",
