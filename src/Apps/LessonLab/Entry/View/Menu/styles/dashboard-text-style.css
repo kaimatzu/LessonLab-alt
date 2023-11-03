@@ -1,0 +1,16 @@
+.dashboard-text {
+	font-family: Roboto, Inter, Arial;
+	display: inline-block;
+	right: 0;
+	color: #313338;
+}
+
+.dashboard-text-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dashboard {
+	padding: auto auto;
+}

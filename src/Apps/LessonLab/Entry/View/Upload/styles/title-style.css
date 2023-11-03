@@ -1,0 +1,9 @@
+.title {
+	font-family: Roboto, Inter, Arial;
+	font-weight: bold;
+	font-size: 64px;
+	vertical-align: top;
+	display: inline-block;
+	border: none;
+	margin-bottom: 0px;
+}

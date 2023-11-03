@@ -10,7 +10,6 @@ reload_html = true
 watch_path = ["src", "public", "assets"]
 
 [web.resource]
-style = ["./assets/style.css"]
+style = ["./assets/reset.css", "./assets/style.css"]
 
 [web.resource.dev]
-style = ["./assets/style.css"]
