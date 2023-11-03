@@ -7,6 +7,7 @@ use crate::Apps::LessonLab::routing::Route;
 
 use crate::ComponentTemplates::Header::Header::Header;
 use crate::ComponentTemplates::Button::Button::Button;
+use crate::ComponentTemplates::Overlay::Overlay::Overlay;
 use crate::ComponentTemplates::Plus::Plus::Plus;
 use crate::ComponentTemplates::FileContainer::FileContainer::FileContainer;
 
@@ -50,6 +51,13 @@ pub fn Upload(cx: Scope) -> Element {
 						text: "Next".to_string()
 					}
 				}
+				// When user clicks plus button 
+				// opens a dialogue that will let the user choose what type of file to upload
+				// if PDF => open file dialogue
+				// if URL => open text field for url
+				// if Text => open text area
+
+				Overlay { is_visible: true }
 				Plus {}
 				// Plus { onClick }
 			}

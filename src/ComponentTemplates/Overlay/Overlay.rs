@@ -1,12 +1,19 @@
-#![allow(non_snake_case)]
-
 use dioxus::prelude::*;
 
-#[inline_props]
-pub fn Overlay(cx: Scope) -> Element {
-	cx.render(rsx! { 
-		div {
-			
+#[derive(Props, PartialEq)]
+pub struct OverlayProps {
+    is_visible: bool,
+    // children: Vec<std::rc::Rc<Component>>,
+}
+
+pub fn Overlay(cx: Scope<OverlayProps>) -> Element {
+	if cx.props.is_visible {
+		return None;
+	}
+
+	cx.render(rsx! {
+		div { class: "overlay",
+			"this is the overlay"
 		}
 	})
 }

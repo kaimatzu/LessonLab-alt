@@ -1,0 +1,8 @@
+.overlay {
+	background-color: red;
+	color: white;
+	width: 500px;
+	height: 500px;
+	border: none;
+	border-radius: none;
+}

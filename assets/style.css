@@ -2,6 +2,10 @@
 	font-family: Roboto, Inter, Arial;
 }
 
+html {
+	background-color: rgba(31, 31, 31, 1);
+}
+
 /* body {
 	margin-left: auto;
 	margin-right: auto;
