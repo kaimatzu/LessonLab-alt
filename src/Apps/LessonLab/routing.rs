@@ -1,8 +1,8 @@
 use dioxus::prelude::*;
 use dioxus_router::prelude::*;
 
-use crate::Apps::LessonLab::Entry::View::Menu::Menu::Menu;
-use crate::Apps::LessonLab::Entry::View::Upload::Upload::Upload;
+use crate::Apps::LessonLab::Entry::View::MenuScreen::Menu::Menu;
+use crate::Apps::LessonLab::Entry::View::UploadScreen::Upload::Upload;
 
 // ANCHOR: router
 #[derive(Routable, Clone, Debug, PartialEq)]
