@@ -12,7 +12,10 @@ use crate::ComponentTemplates::Plus::Plus::Plus;
 use crate::ComponentTemplates::FileContainer::FileContainer::FileContainer;
 
 pub fn Upload(cx: Scope) -> Element {
+
 	let mut num = use_state(cx, || 5);
+	let mut is_visible = use_state(cx, || false);
+
 	render! {
 		style {
 			include_str!("styles/header-style.css")
@@ -25,7 +28,13 @@ pub fn Upload(cx: Scope) -> Element {
 			include_str!("styles/primary-button-style.css")
 			include_str!("styles/secondary-button-style.css")
 			include_str!("styles/lower-right-button-style.css")
+			include_str!("styles/overlay-style.css")
 		},
+
+		Overlay { 
+			is_visible: *is_visible.get(),
+			on_click: move |e| is_visible.set(!*is_visible.get()) 
+		}
 		Header { title: "LessonLab".to_string() }
 		main {
 			div { "style": "display: flex; justify-content: flex-end;",
@@ -39,16 +48,16 @@ pub fn Upload(cx: Scope) -> Element {
 			div { "style": "display: flex; gap: 10px; justify-content: flex-end;",
 				Link { to: Route::Menu {},
 					Button {
-						classname: "secondary-button".to_string(),
-						idname: "right-buttons".to_string(),
-						text: "Cancel".to_string()
+						classname: "secondary-button",
+						idname: "right-buttons",
+						text: "Cancel"
 					}
 				}
 				Link { to: "/",
 					Button {
-						classname: "primary-button".to_string(),
-						idname: "right-buttons".to_string(),
-						text: "Next".to_string()
+						classname: "primary-button",
+						idname: "right-buttons",
+						text: "Next"
 					}
 				}
 				// When user clicks plus button 
@@ -57,8 +66,9 @@ pub fn Upload(cx: Scope) -> Element {
 				// if URL => open text field for url
 				// if Text => open text area
 
-				Overlay { is_visible: true }
-				Plus {}
+				Plus {
+					on_click: move |e|  is_visible.set(!*is_visible.get())
+				}
 				// Plus { onClick }
 			}
 		}

@@ -9,4 +9,5 @@
 	padding: 10px;
 	box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75);
 	color: white;
+	flex-basis: 40%;
 }

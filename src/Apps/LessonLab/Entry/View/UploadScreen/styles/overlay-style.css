@@ -1,8 +1,38 @@
 .overlay {
-	background-color: red;
+	/* background-color: #3133383b; */
 	color: white;
-	width: 500px;
-	height: 500px;
 	border: none;
-	border-radius: none;
+	/* border-radius: 14px; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 90%;
+	width: 98%;
+	padding: 10px;
+	z-index: 100;
+	/* box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75); */
+}
+
+.inner-overlay {
+	padding: 14px;
+	background-color: #313338;
+	color: white;
+	border: none;
+	background-color: #313338;
+	border-radius: 14px;
+	box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75);
+	width: 50%;
+	height: 50%;
+	margin: auto auto;
+	margin-top: 200px;
+	display: block;
+}
+
+.overlay-button {
+	width: 300px;
+	height: 56.53px;
+	margin: auto auto;
+	font-size: 28px;
+	color: #313338;
+	font-weight: 600;
 }

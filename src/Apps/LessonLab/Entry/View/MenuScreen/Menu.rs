@@ -5,6 +5,7 @@ use dioxus_router::prelude::*;
 use crate::Apps::LessonLab::routing::Route;
 use crate::ComponentTemplates::Card::Card::Card;
 use crate::ComponentTemplates::Header::Header::Header;
+use crate::ComponentTemplates::Button::Button::Button;
 
 pub fn Menu(cx: Scope) -> Element {
 	let mut num = use_state(cx, || 5);
@@ -28,7 +29,11 @@ pub fn Menu(cx: Scope) -> Element {
 				}
 				Link {
 					to: Route::Upload {},
-					button { class: "primary-button", id: "", "+ New Material" }
+					Button { 
+						text: "+ New Material",
+						classname: "primary-button",
+						idname: ""
+					}
 				}
 
 				// button { class: "primary-button", id: "new-material-button",
@@ -39,7 +44,10 @@ pub fn Menu(cx: Scope) -> Element {
 			}
 			div { "style": "display: flex; flex-wrap: wrap; justify-content: space-between;",
 				for i in 0..*num.get() {
-					Card { title: "Title".to_string(), desc: "description".to_string() }
+					Card {
+						title: "Title",
+						desc: "description"
+					}
 				}
 			}
 		}

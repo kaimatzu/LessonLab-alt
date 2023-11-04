@@ -4,7 +4,7 @@
 use dioxus::prelude::*;
 
 #[inline_props]
-pub fn Card(cx: Scope, title: String, desc: String) -> Element {
+pub fn Card<'a>(cx: Scope, title: &'a str, desc: &'a str) -> Element<'a> {
 	cx.render(rsx! {
 		div { class: "card",
 			width: "400px",
