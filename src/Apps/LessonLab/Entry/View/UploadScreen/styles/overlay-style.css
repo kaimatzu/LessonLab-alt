@@ -19,8 +19,8 @@
 	color: white;
 	border: none;
 	background-color: #313338;
-	border-radius: 14px;
-	box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75);
+	/* border-radius: 14px; */
+	/* box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75); */
 	width: 50%;
 	height: 50%;
 	margin: auto auto;
@@ -35,4 +35,5 @@
 	font-size: 28px;
 	color: #313338;
 	font-weight: 600;
+	/* box-shadow: 0 4px 30px rgba(247, 196, 27, 0.1); */
 }

@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 use dioxus_router::prelude::*;
 
-use crate::Apps::LessonLab::Entry::View::MenuScreen::Menu::Menu;
+use crate::Apps::LessonLab::Entry::View::MenuScreen::MenuView::Menu;
 use crate::Apps::LessonLab::Entry::View::UploadScreen::Upload::Upload;
 
 // ANCHOR: router
@@ -9,7 +9,7 @@ use crate::Apps::LessonLab::Entry::View::UploadScreen::Upload::Upload;
 #[rustfmt::skip]
 pub enum Route {
 	#[route("/")]
-	Menu {},
+	Menu { /* pass in controller */ },
 	#[route("/upload")]
 	Upload {}
 }

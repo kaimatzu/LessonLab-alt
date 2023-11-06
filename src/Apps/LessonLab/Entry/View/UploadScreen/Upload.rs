@@ -35,7 +35,8 @@ pub fn Upload(cx: Scope) -> Element {
 			is_visible: *is_visible.get(),
 			on_click: move |e| is_visible.set(!*is_visible.get()) 
 		}
-		Header { title: "LessonLab".to_string() }
+
+		Header { title: "LessonLab" }
 		main {
 			div { "style": "display: flex; justify-content: flex-end;",
 				h2 { "Upload File" } // page name

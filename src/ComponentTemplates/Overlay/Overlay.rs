@@ -13,33 +13,23 @@ pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, Mouse
 	// 2 = URL
 	// 3 = Text
 	let mut state = use_state(cx, || 0);
-	let num = use_state(cx, || 0);
+
+
 	if *state.get() == 1 { // PDF
 		cx.render(rsx! {
 			div { class: "overlay",
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
-							onclick: move |e| on_click.call(e),
-							"{*num.get()}"
+							onclick: move |e| {
+								state.set(0);
+								on_click.call(e)
+							},
+							"X"
 						}
 					}
-					div { // 3 buttons
-						"style": "display: flex; flex-direction: column; gap: 70px; bottom: 0px; padding: 50px;",
-						Button {
-							text: "PDF",
-							classname: "primary-button overlay-button",
-							on_click: move |evt| on_click.call(evt),
-						}
-						Button {
-							text: "URL",
-							classname: "primary-button overlay-button",
-						}
-						Button {
-							text: "Text",
-							classname: "primary-button overlay-button",
-						}
-					}
+
+					"Drag and drop area for pdf files"
 
 				}
 			}
@@ -50,60 +40,34 @@ pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, Mouse
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
-							onclick: move |e| on_click.call(e),
+							onclick: move |e| { 
+								state.set(0);
+								on_click.call(e)
+							},
 							"X"
 						}
 					}
-					div { // 3 buttons
-						"style": "display: flex; flex-direction: column; gap: 70px; bottom: 0px; padding: 50px;",
-						Button {
-							text: "PDF",
-							classname: "primary-button overlay-button",
-							idname: ""
-						}
-						Button {
-							text: "URL",
-							classname: "primary-button overlay-button",
-							idname: ""
-						}
-						Button {
-							text: "Text",
-							classname: "primary-button overlay-button",
-							idname: ""
-						}
-					}
+
+					"Url input"
 
 				}
 			}
 		})
-	} else if *state.get() == 3 {
+	} else if *state.get() == 3 { // Text
 		cx.render(rsx! {
 			div { class: "overlay",
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
-							onclick: move |e| on_click.call(e),
+							onclick: move |e| {
+								state.set(0);
+								on_click.call(e)
+							},
 							"X"
 						}
-					}
-					div { // 3 buttons
-						"style": "display: flex; flex-direction: column; gap: 70px; bottom: 0px; padding: 50px;",
-						Button {
-							text: "PDF",
-							classname: "primary-button overlay-button",
-							idname: ""
-						}
-						Button {
-							text: "URL",
-							classname: "primary-button overlay-button",
-							idname: ""
-						}
-						Button {
-							text: "Text",
-							classname: "primary-button overlay-button",
-							idname: ""
-						}
-					}
+					} // x div
+
+					"Large text area"
 
 				}
 			}
@@ -114,16 +78,21 @@ pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, Mouse
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
-							onclick: move |e| on_click.call(e),
+							onclick: move |e| {
+								state.set(0);
+								on_click.call(e)
+							},
 							"X"
 						}
 					}
-					div { // 3 buttons
+					// 3 buttons
+					div {
 						"style": "display: flex; flex-direction: column; gap: 70px; bottom: 0px; padding: 50px;",
 						Button {
 							text: "PDF",
 							classname: "primary-button overlay-button",
-							idname: ""
+							idname: "",
+							on_click: move |evt| state.set(1),
 						}
 						Button {
 							text: "URL",
