@@ -17,12 +17,13 @@
 	padding: 14px;
 	background-color: #313338;
 	color: white;
-	border: none;
 	background-color: #313338;
-	/* border-radius: 14px; */
+	border-radius: 14px;
+	border: white 10px;
 	/* box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75); */
 	width: 50%;
 	height: 50%;
+	min-height: 50%;
 	margin: auto auto;
 	margin-top: 200px;
 	display: block;

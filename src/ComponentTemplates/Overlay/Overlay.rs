@@ -1,6 +1,20 @@
 use dioxus::prelude::{*, SvgAttributes};
 
 use crate::ComponentTemplates::Button::Button::Button;
+use crate::ComponentTemplates::Plus::Plus::Plus;
+
+#[derive(PartialEq)]
+enum State {
+	Select,
+	Pdf,
+	Url,
+	Text,
+}
+
+enum InnerState {
+	Add,
+	Edit
+}
 
 #[inline_props]
 pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, MouseEvent>) -> Element {
@@ -8,67 +22,80 @@ pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, Mouse
 		return None;
 	}
 
+
 	// 0 = select
 	// 1 = PDF
 	// 2 = URL
 	// 3 = Text
-	let mut state = use_state(cx, || 0);
+	let mut state = use_state(cx, || State::Select);
+
+	// 0 = add new files
+	// 1 = edit files
+	let mut inner_state = use_state(cx, || InnerState::Add);
 
 
-	if *state.get() == 1 { // PDF
+	if *state.get() == State::Pdf { // PDF
 		cx.render(rsx! {
 			div { class: "overlay",
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
 							onclick: move |e| {
-								state.set(0);
-								on_click.call(e)
+								reset_states(state, inner_state);
+								on_click.call(e);
 							},
 							"X"
 						}
 					}
 
-					"Drag and drop area for pdf files"
-
+					
+					Plus {
+						classname: "plus",
+						on_click: move |_| {}
+					}
 				}
 			}
 		})
-	} else if *state.get() == 2 { // URL
+	} else if *state.get() == State::Url { // URL
 		cx.render(rsx! {
 			div { class: "overlay",
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
 							onclick: move |e| { 
-								state.set(0);
-								on_click.call(e)
+								reset_states(state, inner_state);
+								on_click.call(e);
 							},
 							"X"
 						}
 					}
 
-					"Url input"
 
+					Plus {
+						classname: "plus plus-bottom-right",
+						on_click: move |_| {}
+					}
 				}
 			}
 		})
-	} else if *state.get() == 3 { // Text
+	} else if *state.get() == State::Text { // Text
 		cx.render(rsx! {
 			div { class: "overlay",
 				div { class: "inner-overlay",
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
 							onclick: move |e| {
-								state.set(0);
-								on_click.call(e)
+								reset_states(state, inner_state);
+								on_click.call(e);
 							},
 							"X"
 						}
 					} // x div
 
-					"Large text area"
-
+					Plus {
+						classname: "plus plud-bottom-right",
+						on_click: move |_| {}
+					}
 				}
 			}
 		})
@@ -79,7 +106,7 @@ pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, Mouse
 					div { "style": "display: flex;", // x button div
 						div { "style": "width: 12px; height: 20px; justify-content: space-between; margin-left: auto",
 							onclick: move |e| {
-								state.set(0);
+								reset_states(state, inner_state);
 								on_click.call(e)
 							},
 							"X"
@@ -91,22 +118,27 @@ pub fn Overlay<'a>(cx: Scope, is_visible: bool, on_click: EventHandler<'a, Mouse
 						Button {
 							text: "PDF",
 							classname: "primary-button overlay-button",
-							idname: "",
-							on_click: move |evt| state.set(1),
+							on_click: move |_| state.set(State::Pdf),
 						}
 						Button {
 							text: "URL",
 							classname: "primary-button overlay-button",
-							idname: ""
+							on_click: move |_| state.set(State::Url),
 						}
 						Button {
 							text: "Text",
 							classname: "primary-button overlay-button",
-							idname: ""						}
+							on_click: move |_| state.set(State::Text),
+						}
 					}
 
 				}
 			}
 		})
 	}
+}
+
+fn reset_states<'a>(state: &'a UseState<State>, inner_state: &'a UseState<InnerState>) {
+	state.set(State::Select);
+	inner_state.set(InnerState::Add);
 }

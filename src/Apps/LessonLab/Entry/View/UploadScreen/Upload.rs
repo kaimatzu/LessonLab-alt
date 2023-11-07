@@ -68,6 +68,7 @@ pub fn Upload(cx: Scope) -> Element {
 				// if Text => open text area
 
 				Plus {
+					classname: "plus",
 					on_click: move |e|  is_visible.set(!*is_visible.get())
 				}
 				// Plus { onClick }

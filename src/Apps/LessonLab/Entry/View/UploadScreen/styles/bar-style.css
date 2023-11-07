@@ -6,10 +6,9 @@
 	padding: 10px;
 	background-color: #313338;
 	/* box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75); */
-	border-radius: 8px;
-	border: rgb(255, 0, 0) 1px;
 	color: white;
 	padding-left: 20px;
 	margin-bottom: 8px;
 	height: 24px;
+	border-radius: 8px;
 }
