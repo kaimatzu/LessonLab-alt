@@ -1,5 +1,7 @@
 body {
+	background-color: rgb(254, 254, 254);
+	margin: 0px;
 	font-family: Roboto, Inter, Arial;
-	/* margin-left: sdaf; */
 	color: #313338;
+	padding-bottom: 50px;
 }

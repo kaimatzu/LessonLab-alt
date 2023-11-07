@@ -1,4 +1,6 @@
 body {
-	/* margin-left: sdaf; */
+	background-color: rgb(254, 254, 254);
+	margin: 0px;
+	font-family: Roboto, Inter, Arial;
 	color: #313338;
 }

@@ -4,9 +4,18 @@
 	margin-bottom: 64px;
 	background-color: #313338;
 	background-image: linear-gradient(0deg, rgb(54, 56, 61), #313338);
-	border-radius: 14px;
+	border-radius: 8px;
 	border: none;
 	padding: 10px;
-	box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75);
+	/* box-shadow: 0 4px 30px rgba(51, 56, 57, 0.75); */
 	color: white;
+	flex-basis: 40%;
+	/* width: 400px;
+	height: 300px; */
+	width: 500px;
+	height: 288.83px;
+}
+
+.card > strong {
+	font-size: 32px;
 }

@@ -2,11 +2,15 @@
 
 use dioxus::prelude::*;
 
-pub fn Plus(cx: Scope) -> Element {
+#[inline_props]
+pub fn Plus<'a>(cx: Scope, classname: &'a str, on_click: EventHandler<'a, MouseEvent>) -> Element {
 	cx.render(rsx! {
-		div { class: "plus",
+		div {
+			class: "{classname}",
+			onclick: move |e| on_click.call(e),
 			"+"
 		}
+
 		// div { class: "plus",
 		// 	onclick: move |_| println!("Clicked"), "+"
 		// }
