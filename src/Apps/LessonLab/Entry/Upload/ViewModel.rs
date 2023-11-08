@@ -29,7 +29,7 @@ impl ViewModel for Upload {
     }
 }
 
-pub fn ViewModel<'a>(cx: Scope<'a>) -> (&'a i32, &'a i32, &'a i32, &'a bool, impl FnMut(Event<MouseData>) + 'a) {
+pub fn ViewModel<'a, T>(cx: Scope<'a>) -> (&'a i32, &'a i32, &'a i32, &'a bool, impl FnMut(Event<T>) + 'a) {
     let upload = Upload{
         pdf_amount: 1,
         url_amount: 2,
@@ -41,7 +41,7 @@ pub fn ViewModel<'a>(cx: Scope<'a>) -> (&'a i32, &'a i32, &'a i32, &'a bool, imp
     let mut url_amount_state = use_state(cx, || upload.get_url_amount());
     let mut text_amount_state = use_state(cx, || upload.get_text_amount());
     let mut overlay_visibility_state = use_state(cx, || upload.get_overlay_visibility());
-    let visibility_event = move |event: MouseEvent| overlay_visibility_state.set(!*overlay_visibility_state.get());
+    let visibility_event = move |event| overlay_visibility_state.set(!*overlay_visibility_state.get());
 
     (pdf_amount_state, url_amount_state, text_amount_state, overlay_visibility_state, visibility_event)
 }
