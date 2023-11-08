@@ -1,15 +1,15 @@
 use dioxus::prelude::*;
 use dioxus_router::prelude::*;
+use serde::{Deserialize, Serialize};
 
-use crate::Apps::LessonLab::Entry::View::MenuScreen::MenuView::Menu;
-use crate::Apps::LessonLab::Entry::View::UploadScreen::Upload::Upload;
-
+use crate::Apps::LessonLab::Entry::Menu::View::Menu;
+use crate::Apps::LessonLab::Entry::Upload::View::Upload;
 // ANCHOR: router
-#[derive(Routable, Clone, Debug, PartialEq)]
+#[derive(Clone, Routable, Debug, PartialEq, Serialize, Deserialize)]
 #[rustfmt::skip]
 pub enum Route {
 	#[route("/")]
-	Menu { /* pass in controller */ },
+	Menu {},
 	#[route("/upload")]
 	Upload {}
 }

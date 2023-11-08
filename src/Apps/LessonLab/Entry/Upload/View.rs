@@ -3,7 +3,7 @@
 use dioxus::{prelude::*, html::hr, html::link};
 use dioxus_router::prelude::*;
 
-use crate::Apps::LessonLab::routing::Route;
+use crate::Apps::LessonLab::Routing::Route;
 
 use crate::ComponentTemplates::Header::Header::Header;
 use crate::ComponentTemplates::Button::Button::Button;
@@ -11,9 +11,17 @@ use crate::ComponentTemplates::Overlay::Overlay::Overlay;
 use crate::ComponentTemplates::Plus::Plus::Plus;
 use crate::ComponentTemplates::FileContainer::FileContainer::FileContainer;
 
-pub fn Upload(cx: Scope) -> Element {
+use crate::Apps::LessonLab::Entry::Upload::ViewModel::*;
 
-	let mut num = use_state(cx, || 5);
+#[inline_props]
+pub fn UploadComponent<'a>(
+	cx: Scope, 
+	pdf_amount: &'a i32, 
+	url_amount: &'a i32, 
+	text_amount: &'a i32,
+	overlay_visibility: &'a bool,
+	on_overlay_button_click: EventHandler<'a, MouseEvent>) -> Element<'a> {
+
 	let mut is_visible = use_state(cx, || false);
 
 	render! {
@@ -32,19 +40,20 @@ pub fn Upload(cx: Scope) -> Element {
 		},
 
 		Overlay { 
-			is_visible: *is_visible.get(),
-			on_click: move |e| is_visible.set(!*is_visible.get()) 
+			is_visible: **overlay_visibility,
+			on_click: move |event: MouseEvent| on_overlay_button_click.call(event), 
 		}
 
 		Header { title: "LessonLab" }
+
 		main {
 			div { "style": "display: flex; justify-content: flex-end;",
 				h2 { "Upload File" } // page name
 			}
 			div { "style": "padding-bottom: 60px;",
-				FileContainer { section: "PDF".to_string(), num: *num.get() }
-				FileContainer { section: "URL".to_string(), num: *num.get() }
-				FileContainer { section: "Text".to_string(), num: *num.get() }
+				FileContainer { section: "PDF".to_string(), file_amount: pdf_amount }
+				FileContainer { section: "URL".to_string(), file_amount: url_amount }
+				FileContainer { section: "Text".to_string(), file_amount: text_amount }
 			}
 			div { "style": "display: flex; gap: 10px; justify-content: flex-end;",
 				Link { to: Route::Menu {},
@@ -69,10 +78,28 @@ pub fn Upload(cx: Scope) -> Element {
 
 				Plus {
 					classname: "plus",
-					on_click: move |e|  is_visible.set(!*is_visible.get())
+					on_click: move |event: MouseEvent| on_overlay_button_click.call(event),
 				}
 				// Plus { onClick }
 			}
 		}
 	}
+}
+
+pub fn Upload(cx: Scope) -> Element {
+    let (pdf_amount_state, 
+		url_amount_state, 
+		text_amount_state, 
+		overlay_visibility_state,
+		visibility_event) = ViewModel(cx);
+
+    cx.render(rsx!{
+        UploadComponent { 
+			pdf_amount: pdf_amount_state, 
+			url_amount: url_amount_state, 
+			text_amount: text_amount_state,
+			overlay_visibility: overlay_visibility_state,
+			on_overlay_button_click: visibility_event,
+		},
+    })
 }

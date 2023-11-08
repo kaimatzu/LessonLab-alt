@@ -5,15 +5,15 @@ use dioxus::prelude::*;
 use crate::ComponentTemplates::Bar::Bar::Bar;
 
 #[inline_props]
-pub fn FileContainer(cx: Scope, section: String, num: i32) -> Element {
+pub fn FileContainer<'a>(cx: Scope, section: String, file_amount: &'a i32) -> Element<'a> {
 	let filename = "this a filename";	
-	let mut num = use_state(cx, || 3);
+	// let mut num = use_state(cx, || 3);
 	cx.render(rsx! {
 		div { class: "filetype-container",
 		h1 { "style": "font-size: 36px;", "{section}" }
 			// list of files here
 			// for loop
-			for i in 0..*num.get() {
+			for i in 0..**file_amount {
 				Bar { text: filename.to_string() }
 			}
 		}
